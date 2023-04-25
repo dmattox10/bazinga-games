@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { updateProduct } from "../api-adapter/index";
 import "./editproduct.css";
 
+// Interesting way to prefill this form, you or I can clean it up and add validation and feedback easily, here and other forms, with formik!
 const EditProduct = (props) => {
   const product = props.product;
   const products = props.products;
