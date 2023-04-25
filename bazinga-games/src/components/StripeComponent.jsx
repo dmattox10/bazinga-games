@@ -7,7 +7,7 @@ const StripeComponent = () => {
 
   (async () => {
     const customer = await stripe.customers.create({
-      email: "customer@example.com",
+      email: "customer@example.com", // Go ahead and update the form so that it collects the email and passes it here, ahead of time, instead of figuring it out later.
     });
 
     
