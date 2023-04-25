@@ -17,9 +17,7 @@ const LoginPage = ({ setUser, setIsLoggedIn }) => {
       password,
       setLoginMessage
     );
-    localStorage.removeItem("token");
-    localStorage.setItem("token", token);
-    localStorage.removeItem("username");
+    localStorage.setItem("token", token); // localStorage will automatically overwrite old info, no need to removeItem except during logout 
     localStorage.setItem("username", username);
     setUsername("");
     setPassword("");
