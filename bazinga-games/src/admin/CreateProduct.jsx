@@ -24,11 +24,11 @@ const CreateProduct = (props) => {
       image_URL,
       price
     );
-    if (products) {
-      let allProducts = await fetchProducts();
-      if (allProducts) {
+    if (products) { // Why do we test for this?
+      let allProducts = await fetchProducts(); // Just checked if they are there, get them again?
+      if (allProducts) { // Just got them again, and make sure, again?
         setProducts(allProducts.products);
-        fetchProducts();
+        fetchProducts(); // Is this the third time we get products while we are here? This time we didn't wait, this creates what are called "side effects".
       }
     }
   }
