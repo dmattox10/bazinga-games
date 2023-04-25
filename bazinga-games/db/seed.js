@@ -19,7 +19,7 @@ const {
   
       const Krystian = await createUser({
         username: "Krystian",
-        password: "123",
+        password: "123", // Use ENV file for even this, if nothing else bots have scraped this file now for this username and password pair and will autoatically try it in the future.
         is_admin: true,
         email: "krystian1@gmail.com",
         address: "1 chestnutridgeway, orange park Fl 32065 USA"
