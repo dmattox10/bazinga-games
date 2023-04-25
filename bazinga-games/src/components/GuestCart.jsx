@@ -20,7 +20,7 @@ const GuestCart = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 600);
+    }, 600); // Why do we manually change set Loading with a timer?
   }, []);
 
   const [cart, setCart] = useState(
