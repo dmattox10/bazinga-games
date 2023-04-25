@@ -29,7 +29,7 @@ const Main = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 1500);
+    }, 1500); // anything over 1000 is going to make users unhappy.
   }, []);
 
   const [user, setUser] = useState("");
