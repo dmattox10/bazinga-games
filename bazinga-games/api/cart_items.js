@@ -8,7 +8,7 @@ cartItemsRouter.get("/", async (req, res, next) => {
     try {
       const cartItems = await getAllCartItems();
   
-      if (!cartItems) {
+      if (cartItems) { // If it doesn't exist, send it anyway? Get rid of the "!"
         res.send(cartItems);
       }
     } catch ({ name, message }) {
