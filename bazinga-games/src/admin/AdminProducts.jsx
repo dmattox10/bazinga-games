@@ -11,7 +11,7 @@ const AdminProducts = () => {
 
   async function fetchProducts() {
     let placeholder = await getProducts();
-    setProducts(placeholder.products);
+    setProducts(placeholder.products); // Looking at how the apiAdapter returns "results" so if we are missing info, change this to placeholder.data, possibly placeholder.data.products depending on the backend (db/products.js returns "rows")
   }
 
   useEffect(() => {
@@ -42,9 +42,9 @@ const AdminProducts = () => {
       />
 
       <div id="container">
-        {products.length ? (
+        {products.length ? ( // The .length error we got most likely came from here, consider instead of checking the length refactoring React suspense in to prevent this entirely.
           products.map((product) => {
-            return (
+            return ( // Lines 62 - 67 have a neat component with props, consider doing the same to this bit, and nesting the EditProduct component below into a "Product" component made from the JSX between here and there?
               <div key={`product-${product.id}`} className="productBox-admin">
                 <div className="productName">{product.name}</div>
                 <div className="productDescription">
