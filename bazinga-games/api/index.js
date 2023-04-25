@@ -54,7 +54,7 @@ apiRouter.use('/cart', cartRouter)
 const cartItemsRouter = require('./cart_items')
 apiRouter.use('/cart_items', cartItemsRouter)
 
-apiRouter.get('*', (req, res, next) => {
+apiRouter.get('*', (req, res, next) => { // I'm pretty sure this will also respond to routes that are found and prevvent the whole thing from working.... If we run into diffictulties try moving it up and down the routing chain
   res.status(404)
   res.send({
     message: "Not Found"
